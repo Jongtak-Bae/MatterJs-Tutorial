@@ -1,13 +1,12 @@
-function Box(x, y, w, h) {
+function Circle(x, y, r) {
 
   var options={
     friction:1,
-    restitution:0.2,
+    restitution:0.4,
 
   }
-  this.body = Bodies.rectangle(x,y,w,h,options);
-  this.w = w;
-  this.h = h;
+  this.body = Bodies.circle(x,y,r,options);
+  this.r = r;
   this.body.friction = 0;
   World.add(world, this.body);
   this.show = function(){
@@ -20,7 +19,7 @@ function Box(x, y, w, h) {
     strokeWeight(1);
     stroke(0);
     fill(this.col,123,78);
-    rect(0, 0, this.w, this.h);
+    ellipse(0, 0, this.r * 2);
     pop();
   }
 }
